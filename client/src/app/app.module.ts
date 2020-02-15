@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TwitterTimelineComponent } from './twitter-timeline/twitter-timeline.component';
+import { TwitterserviceService } from './twitterservice.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { TwitterTimelineComponent } from './twitter-timeline/twitter-timeline.co
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [TwitterserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
