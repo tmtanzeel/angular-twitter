@@ -1,8 +1,12 @@
 const express = require('express');
 const Twitter = require('twit');
 const app = express();
+const cors = require('cors');
+const bodyParser = require('body-parser');
 
 app.listen(3000, () => console.log('Server running'));
+app.use(bodyParser.json());
+app.use(cors());
 
 const api_client = new Twitter({
     consumer_key: '5KvPZUZ83y8uPDJypf1zLAplc',
@@ -10,6 +14,13 @@ const api_client = new Twitter({
     access_token: '1219680138939359232-0Tgj5k3KjQZnvbBy7roAPKBpk0eNJB',
     access_token_secret: 'Wc57BqdPSqhJWqABpv2j57wYLN1pjIkrDJUNVdLnoWJmx'
 })
+
+// app.use(function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   next();
+// });
 
 app.get('/home_timeline', (req, res) => {
     const params = { tweet_mode: 'extended', count: 10 };
