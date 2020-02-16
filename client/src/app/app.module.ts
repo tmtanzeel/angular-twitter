@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TwitterTimelineComponent } from './twitter-timeline/twitter-timeline.component';
 import { TwitterserviceService } from './twitterservice.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,8 @@ import { TwitterserviceService } from './twitterservice.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [TwitterserviceService],
   bootstrap: [AppComponent]
