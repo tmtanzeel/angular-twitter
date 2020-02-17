@@ -1,3 +1,3 @@
 # angular-twitter
 
-## This project is a simple demo od using twitter aPI with angular. Reads tweets only.
+## This project is a simple demo of using twitter API with Angular. Reads tweets only and no posts and retweets.
