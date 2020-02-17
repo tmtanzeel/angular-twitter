@@ -9,10 +9,10 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const api_client = new Twitter({
-    consumer_key: '5KvPZUZ83y8uPDJypf1zLAplc',
-    consumer_secret: 'm1sfnBIv50gnIOn8addb1MzBmUyi1Ml9MeAFfhPVAet1WMha6Z',
-    access_token: '1219680138939359232-0Tgj5k3KjQZnvbBy7roAPKBpk0eNJB',
-    access_token_secret: 'Wc57BqdPSqhJWqABpv2j57wYLN1pjIkrDJUNVdLnoWJmx'
+    consumer_key: 'YOUR_KEY',
+    consumer_secret: 'YOUR_KEY',
+    access_token: 'YOUR_KEY',
+    access_token_secret: 'YOUR_KEY'
 })
 
 app.get('/home_timeline', (req, res) => {
