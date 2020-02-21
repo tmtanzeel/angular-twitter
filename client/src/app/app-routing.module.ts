@@ -4,7 +4,7 @@ import { TwitterTimelineComponent } from './twitter-timeline/twitter-timeline.co
 
 const routes: Routes = [
   { path: 'twitter_timeline', component: TwitterTimelineComponent },
-  { path: '', redirectTo: '', pathMatch: 'full' }
+  { path: '', redirectTo: 'twitter_timeline', pathMatch: 'full' }
 ];
 
 @NgModule({

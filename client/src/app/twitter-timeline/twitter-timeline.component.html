@@ -1,17 +1,16 @@
-<h1>Twitter Timeline</h1>
+<h1 class="heading">Twitter Timeline</h1>
 <div *ngIf="undefined === myTimeline">Loading...</div>
 <div *ngIf="undefined !== myTimeline">
     <div>
         <div class="container card" *ngFor="let tweets of myTimeline.data">
             <div class="row">
-                <div class="col-sm-2 col-md-2 col-lg-2 image-column">
+                <div class="col-sm-1 col-md-1 col-lg-1 image-column">
                     <div class="twitter-logo-wrapper">
                         <img class="twitter-logo" src="assets/images/icons/twitter-icon.png">
                     </div>
                 </div>
-                <div class="col-sm-10 col-md-10 col-lg-10 text-column">
-                    <p class="screen-name">{{tweets.user.screen_name}}<br>
-                        <!-- <span class="user-status"><img src="{{tweets.user.profile_image_url}}"></span><br> -->
+                <div class="col-sm-11 col-md-11 col-lg-11 text-column">
+                    <p class="screen-name"><b>{{tweets.user.screen_name}}</b><br>
                         <span class="user-status">{{tweets.user.description}}</span>
                     </p>
                     <br>
@@ -21,7 +20,8 @@
                 <div class="col-sm-12 col-md-12 col-lg-12">
                     <span class="twitter-logo">{{tweets.full_text}}</span>&nbsp;&nbsp;&nbsp;
                     <p class="user-location">
-                        Location: {{tweets.user.location}}
+                        - tweet by {{tweets.user.name}}
+                        <span class="user-status"><img src="{{tweets.user.profile_image_url_https}}"></span>
                     </p>
                     <p>
                         <i class="icon-heart-empty heart-symbol"></i>&nbsp;
