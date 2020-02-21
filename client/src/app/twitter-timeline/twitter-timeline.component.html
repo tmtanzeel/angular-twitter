@@ -1,16 +1,40 @@
 <h1>Twitter Timeline</h1>
 <div *ngIf="undefined === myTimeline">Loading...</div>
 <div *ngIf="undefined !== myTimeline">
-  <div class ="card">
-    <ng-container *ngFor="let tweets of myTimeline.data">
-      <h3>{{tweets.full_text
-        }}
-      </h3>
-      <p>{{tweets.created_at}}</p>
-      <p>{{tweets.user.name}}</p>
-      <p>{{tweets.user.screen_name}}</p>
-      <p>{{tweets.user.location}}</p>
-      <p>{{tweets.user.description}}</p>
-    </ng-container>
-  </div>
+    <div>
+        <div class="container card" *ngFor="let tweets of myTimeline.data">
+            <div class="row">
+                <div class="col-sm-2 col-md-2 col-lg-2 image-column">
+                    <div class="twitter-logo-wrapper">
+                        <img class="twitter-logo" src="assets/images/icons/twitter-icon.png">
+                    </div>
+                </div>
+                <div class="col-sm-10 col-md-10 col-lg-10 text-column">
+                    <p class="screen-name">{{tweets.user.screen_name}}<br>
+                        <!-- <span class="user-status"><img src="{{tweets.user.profile_image_url}}"></span><br> -->
+                        <span class="user-status">{{tweets.user.description}}</span>
+                    </p>
+                    <br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <span class="twitter-logo">{{tweets.full_text}}</span>&nbsp;&nbsp;&nbsp;
+                    <p class="user-location">
+                        Location: {{tweets.user.location}}
+                    </p>
+                    <p>
+                        <i class="icon-heart-empty heart-symbol"></i>&nbsp;
+                        <span class="likes-count">{{tweets.user.followers_count}}</span>&nbsp;&nbsp;&nbsp;
+                        <span class="date-of-post">{{tweets.created_at}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="date-of-post">
+                            <a *ngIf="tweets['entities']['urls']?.length > 0" href="{{tweets['entities']['urls'][0]['expanded_url']}}" target="_blank">
+                                <button class="btn btn-info">Read</button>
+                             </a>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

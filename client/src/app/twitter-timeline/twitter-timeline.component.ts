@@ -1,6 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
 import { TwitterserviceService } from '../twitterservice.service';
-
 
 @Component({
   selector: 'app-twitter-timeline',
@@ -12,11 +12,11 @@ import { TwitterserviceService } from '../twitterservice.service';
 export class TwitterTimelineComponent implements OnInit {
    
   myTimeline: any;
- 
+
   constructor(private api: TwitterserviceService) { }
  
   ngOnInit() {
-   this.getTwitterTimeline();
+    this.getTwitterTimeline();
   }
    
   getTwitterTimeline(): void {
@@ -27,6 +27,5 @@ export class TwitterTimelineComponent implements OnInit {
           console.log(this.myTimeline);
         }
       )
-   }
-   
+   } 
 }
